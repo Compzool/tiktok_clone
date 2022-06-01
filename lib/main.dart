@@ -23,16 +23,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return DefaultTextStyle(
-      style: TextStyle(fontFamily: 'ios'),
-      child: GetMaterialApp(
-        title: 'TikTok Clone',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: backgroundColor,
+    return GetMaterialApp(
+      title: 'TikTok Clone',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: backgroundColor,
+        textTheme: ThemeData.dark().textTheme.apply(
+          fontFamily: 'ios',
         ),
-        home: LoginScreen(),
+    primaryTextTheme: ThemeData.dark().textTheme.apply(
+          fontFamily: 'ios',
+        ),
       ),
+      home: LoginScreen(),
     );
   }
 }
